@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>2023-10-24-测试博客</title>
+      <link href="/2023/10/24/test/"/>
+      <url>/2023/10/24/test/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是我的测试博客"><a href="#这是我的测试博客" class="headerlink" title="这是我的测试博客"></a>这是我的测试博客</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> xdu </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023-10-21-测试博客</title>
+      <link href="/2023/10/21/test/"/>
+      <url>/2023/10/21/test/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是我的测试博客"><a href="#这是我的测试博客" class="headerlink" title="这是我的测试博客"></a>这是我的测试博客</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023-10-18-经典组合问题</title>
+      <link href="/2023/10/18/%E7%BB%8F%E5%85%B8%E7%BB%84%E5%90%88%E9%97%AE%E9%A2%98/"/>
+      <url>/2023/10/18/%E7%BB%8F%E5%85%B8%E7%BB%84%E5%90%88%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="经典组合问题"><a href="#经典组合问题" class="headerlink" title="经典组合问题"></a>经典组合问题</h1><hr><p>在<strong>Leetcode</strong>刷过<strong>回溯算法</strong>的同学应该都知道,组合问题是回溯算法中经典的一种题型</p><p>本篇博客给大家介绍的就是组合问题三兄弟:<br><strong><em>39.数组总和</em></strong><br><strong><em>40.数组总和II</em></strong><br><strong><em>216.数组总和III</em></strong></p><p>为什么我想说说这三道题呢,因为这三道题的本质就是套回溯算法的模版</p><p>属于只要弄明白了,那么组合问题就一定没问题了,甚至大部分的回溯算法问题也能够解决</p><p>回溯法（back tracking）（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。<strong>但当探索到某一步时，发现原先选择并不优或达不到目标，就退回到上一步，重新选择</strong>,这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。</p><p>回溯算法的关键在于找到终止条件,无论是子过程结束的终止条件,还是回退到上一步的终止条件.</p><p>例如 <strong>39数组总和</strong> 这道题中子过程的终止条件为<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(target==<span class="number">0</span>)&#123;</span><br><span class="line">    ans.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(list));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>回退到上一步的终止条件为<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(target-candidates[i]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这就是解决问题的关键</p><p><strong>回溯算法模版(伪代码版)</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">backtracking</span><span class="params">(参数)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (终止条件) &#123;</span><br><span class="line">        存放结果;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">        处理节点;</span><br><span class="line">        backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">        回溯，撤销处理结果</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>回溯算法模版(详细版)就是39数组总和的代码</strong></p><h2 id="39数组总和"><a href="#39数组总和" class="headerlink" title="39数组总和"></a>39数组总和</h2><h4 id="1-标准回溯"><a href="#1-标准回溯" class="headerlink" title="1.标准回溯"></a>1.标准回溯</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; ans=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line">    List&lt;Integer&gt; list=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combinationSum</span><span class="params">(<span class="type">int</span>[] candidates, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        Arrays.sort(candidates);</span><br><span class="line">        backtrack(candidates,target,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(<span class="type">int</span>[] candidates,<span class="type">int</span> target,<span class="type">int</span> start)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(target==<span class="number">0</span>)&#123;</span><br><span class="line">            ans.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(list));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start;i&lt;candidates.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(target-candidates[i]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            list.add(candidates[i]);</span><br><span class="line">            backtrack(candidates,target-candidates[i],i);</span><br><span class="line">            list.remove(list.size()-<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="40数组总和II"><a href="#40数组总和II" class="headerlink" title="40数组总和II"></a>40数组总和II</h2><p>跟39题非常像,就是要防止重复出现的子集<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; ans=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line">    List&lt;Integer&gt; list=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combinationSum2</span><span class="params">(<span class="type">int</span>[] candidates, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        Arrays.sort(candidates);</span><br><span class="line">        combine(candidates,target,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">combine</span><span class="params">(<span class="type">int</span>[] candidates,<span class="type">int</span> target,<span class="type">int</span> start)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(target==<span class="number">0</span>)&#123;</span><br><span class="line">            ans.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(list));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start;i&lt;candidates.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(target-candidates[i]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;start&amp;&amp;candidates[i]==candidates[i-<span class="number">1</span>])&#123;<span class="comment">//最关键的就是这个</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            list.add(candidates[i]);</span><br><span class="line">            combine(candidates,target-candidates[i],i+<span class="number">1</span>);</span><br><span class="line">            list.remove(list.size()-<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="216数组总和III"><a href="#216数组总和III" class="headerlink" title="216数组总和III"></a>216数组总和III</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; ans=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line">    List&lt;Integer&gt; list=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combinationSum3</span><span class="params">(<span class="type">int</span> k, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;=k)&#123;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        combine(k,n,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">combine</span><span class="params">(<span class="type">int</span> k,<span class="type">int</span> n,<span class="type">int</span> start)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">                ans.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(list));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n-i&lt;<span class="number">0</span>||k&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            list.add(i);</span><br><span class="line">            combine(k-<span class="number">1</span>,n-i,i+<span class="number">1</span>);</span><br><span class="line">            list.remove(list.size()-<span class="number">1</span>);</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>估值原理听后感</title>
       <link href="/2023/10/12/%E4%BC%B0%E5%80%BC%E5%8E%9F%E7%90%86/"/>
       <url>/2023/10/12/%E4%BC%B0%E5%80%BC%E5%8E%9F%E7%90%86/</url>
@@ -23,66 +80,9 @@
     
     
     <entry>
-      <title>2023-10-3-测试博客</title>
-      <link href="/2023/10/03/2023-10-3-test/"/>
-      <url>/2023/10/03/2023-10-3-test/</url>
-      
-        <content type="html"><![CDATA[<h2 id="这是我的测试博客"><a href="#这是我的测试博客" class="headerlink" title="这是我的测试博客"></a>这是我的测试博客</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> xdu </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>2023-10-2-测试博客</title>
-      <link href="/2023/10/02/2023-10-2-test/"/>
-      <url>/2023/10/02/2023-10-2-test/</url>
-      
-        <content type="html"><![CDATA[<h2 id="这是我的测试博客"><a href="#这是我的测试博客" class="headerlink" title="这是我的测试博客"></a>这是我的测试博客</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> leetcode </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>2023-10-1-测试博客</title>
-      <link href="/2023/10/01/2023-10-1-test/"/>
-      <url>/2023/10/01/2023-10-1-test/</url>
-      
-        <content type="html"><![CDATA[<h2 id="这是我的测试博客"><a href="#这是我的测试博客" class="headerlink" title="这是我的测试博客"></a>这是我的测试博客</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>个人博客的搭建(全流程覆盖)</title>
-      <link href="/2023/09/26/2023-9-26-%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2023/09/26/2023-9-26-%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</url>
+      <link href="/2023/09/26/2023-9-26-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+      <url>/2023/09/26/2023-9-26-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/</url>
       
         <content type="html"><![CDATA[<h1 id="个人博客的搭建教程推荐-踩坑记录"><a href="#个人博客的搭建教程推荐-踩坑记录" class="headerlink" title="个人博客的搭建教程推荐+踩坑记录"></a>个人博客的搭建教程推荐+踩坑记录</h1><hr><h2 id="本人博客的说明"><a href="#本人博客的说明" class="headerlink" title="本人博客的说明"></a>本人博客的说明</h2><p>趁着国庆假期,花了大概两天时间将这个博客搭了起来,主要是走了一些弯路(哭),其实主要是上午都在睡懒觉(雾)</p><p>采用的是<a href="https://hexo.io/zh-cn/index.html%" style="color: black; text-decoration: underline;text-decoration-style: dotted;">hexo框架</a></p><p>主题是<a href="https://butterfly.js.org/" style="color: black; text-decoration: underline;text-decoration-style: dotted;">butterfly</a>,加上了个人的一些魔改,由于本人喜欢简洁的风格,所以魔改的内容并不算太多</p><p>部署了两个远程仓库,一个是我的github仓库,另一个是我在阿里云服务器上的仓库</p><hr><h2 id="教程推荐"><a href="#教程推荐" class="headerlink" title="教程推荐"></a>教程推荐</h2><p>自学能力比较强的同学可以去看官方文档,上一趴已有链接</p><p>推荐一些保姆级教程: </p><ol><li><a href="https://www.fomal.cc/" style="color: black; text-decoration: underline;text-decoration-style: dotted;">Fomalhaut的博客</a>,既有基础教程,也包含了魔改教程,还有<a href="https://space.bilibili.com/220757832" style="color: black; text-decoration: underline;text-decoration-style: dotted;">Fomalhaut的bilibili主页</a></li><li><a href="https://blog.anheyu.com/" style="color: black; text-decoration: underline;text-decoration-style: dotted;">安知鱼的博客</a>,内容十分详细,安知鱼主题也十分好看哦,佬的<a href="https://space.bilibili.com/372204786" style="color: black; text-decoration: underline;text-decoration-style: dotted;">bilibili主页链接</a></li></ol><p>建议小白跟着视频一步步操作,掌握了基础就可以去魔改自己想要的效果啦</p><hr><h3 id="推荐一些别的主题"><a href="#推荐一些别的主题" class="headerlink" title="推荐一些别的主题"></a>推荐一些别的主题</h3><ol><li><a href="https://github.com/xzhih/hexo-theme-casper" style="color: black; text-decoration: underline;text-decoration-style: dotted;">casper主题</a>,这算是我看下来最简洁,最有大厂范的主题了,如果我还有空折腾的话,这就是我下一个博客的主题了</li><li><a href="https://docs.anheyu.com/" style="color: black; text-decoration: underline;text-decoration-style: dotted;">安知鱼</a>,这也是我很喜欢的一个主题,casper,忘了我吧(大雾)</li><li><a href="https://github.com/theme-next/hexo-theme-next" style="color: black; text-decoration: underline;text-decoration-style: dotted;">next主题</a></li><li><a href="https://github.com/litten/hexo-theme-yilia" style="color: black; text-decoration: underline;text-decoration-style: dotted;">yimlia主题</a></li></ol><p>更多主题可以去<del>世界最大男性交友网站</del><strong>github</strong>自行寻找</p><hr><h2 id="关于服务器"><a href="#关于服务器" class="headerlink" title="关于服务器"></a>关于服务器</h2><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p>觉得麻烦的同学可以直接使用github当网站托管,省事又省钱,就是访问速度有点捉襟见肘</p><h3 id="网站托管"><a href="#网站托管" class="headerlink" title="网站托管"></a>网站托管</h3><p>还有就是一些网站托管平台,像vercel,cloudflare等,不过会经常被墙就是了,似乎vercel已经寄了,托管和加速了太多诈骗网站(乐)</p><h3 id="拥有自己的云服务器-推荐"><a href="#拥有自己的云服务器-推荐" class="headerlink" title="拥有自己的云服务器(推荐)"></a>拥有自己的云服务器(推荐)</h3><p>有闲置的机器并且喜欢折腾的同学可以自己搞,网上有很多教程,不过大多数人应该没有多余的机器,所以就不详细描述了</p><p>国内云服务器厂商的主流选择就是阿里云,华为云和腾讯云,当然你去白嫖国外云服务器厂商的服务器也是可以的</p><hr><h2 id="将网站部署到自己的服务器上"><a href="#将网站部署到自己的服务器上" class="headerlink" title="将网站部署到自己的服务器上"></a>将网站部署到自己的服务器上</h2><p>推荐推荐yyyz的<a href="https://www.bilibili.com/video/BV1qU4y1K7Hk/?spm_id_from=333.999.0.0&vd_source=26068b3fc005480cb76f959e037a7a07" style="color: black; text-decoration: underline;text-decoration-style: dotted;">视频教程</a>和<a href="https://www.yyyzyyyz.cn/" style="color: black; text-decoration: underline;text-decoration-style: dotted;">博客</a></p><p>建议跟着一步步去操作,否则你就会发现通过服务器的公网ip访问不到你的博客,当然博客已经写的很详实了,有基础可以直接跟着操作</p><p>我用的是阿里云的服务器,建议先把白嫖六个月服务器要求的教程做了,这样你几乎不会碰到什么困难(血泪教训)</p><hr><h2 id="关于上线网站的手续"><a href="#关于上线网站的手续" class="headerlink" title="关于上线网站的手续"></a>关于上线网站的手续</h2><p>几乎全部流程都可以在云服务厂商那走完,而且还有代办服务,只不过要钱就是了</p><p>首先,要有自己的域名,在你的云服务厂商那购买即可,大家可以根据自己的经济实力和喜好购买,主要自己玩可以买.cc,主要访问者在国内推荐.cn,希望国际化一点就买.com(就是经济实力不允许,太贵了),建议多买两年,买完走报备流程,或者流程走完再买都可</p><p>然后就是ICT备案了,各个省份的要求有所不同,建议选择自己身份证所在地区进行报备,可能会少一些麻烦,我在江苏报备,需要身份证照片,人脸验证,居住证,两份承诺书,承诺视频,还有居住证(学生没有的话传身份证即可),个人觉得很繁琐.还有以博客的名义建站,站点名称需要带上个人真实姓名,互联网咩有隐私(悲)</p><p>最后就是公安备案啦,网上有说可备可不备的,但是建议备案一下,国内的监管越来越严了,到时候出事了就不好了</p>]]></content>
       
