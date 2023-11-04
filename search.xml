@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>2023-10-24-测试博客</title>
-      <link href="/2023/10/24/test/"/>
-      <url>/2023/10/24/test/</url>
+      <title>XDU操作系统课设1</title>
+      <link href="/2023/11/04/XDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E8%AE%BE1/"/>
+      <url>/2023/11/04/XDU%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E8%AE%BE1/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的测试博客"><a href="#这是我的测试博客" class="headerlink" title="这是我的测试博客"></a>这是我的测试博客</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
       
       
       <categories>
@@ -23,11 +23,11 @@
     
     
     <entry>
-      <title>2023-10-21-测试博客</title>
-      <link href="/2023/10/21/test/"/>
-      <url>/2023/10/21/test/</url>
+      <title>乐观锁和悲观锁</title>
+      <link href="/2023/10/30/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/"/>
+      <url>/2023/10/30/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的测试博客"><a href="#这是我的测试博客" class="headerlink" title="这是我的测试博客"></a>这是我的测试博客</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="乐观锁和悲观锁"><a href="#乐观锁和悲观锁" class="headerlink" title="乐观锁和悲观锁"></a>乐观锁和悲观锁</h2><p>最近在学<strong>redis</strong>,学到锁的时候了解到redis的锁机制是<strong>乐观锁</strong>,而<strong>mysql</strong>的锁机制是<strong>悲观锁</strong>,所以写这篇来记录一下我对这两种锁的理解</p><h3 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h3><p>乐观认为不会有别的线程与它来抢占修改,直接对数据进行修改,在提交的时候进行检查,看是否有别的线程修改过数据,如果修改过,就放弃修改,返回错误或者重试.</p><p>乐观锁一般有两种实现方式:<strong>版本号机制和CAS算法</strong></p><h4 id="版本号机制-redis采用的方案"><a href="#版本号机制-redis采用的方案" class="headerlink" title="版本号机制(redis采用的方案)"></a>版本号机制(redis采用的方案)</h4><p>一般是在数据表中加上一个数据版本号 version 字段，表示数据被修改的次数。当数据被修改时，version 值会加一。当线程 A 要更新数据值时，在读取数据的同时也会读取 version 值，在提交更新时，若刚才读取到的 version 值为当前数据库中的 version 值相等时才更新，否则重试更新操作，直到更新成功。</p><h4 id="CAS算法"><a href="#CAS算法" class="headerlink" title="CAS算法"></a>CAS算法</h4><p>CAS 的全称是 <strong>Compare And Swap（比较与交换）</strong> ，用于实现乐观锁，被广泛应用于各大框架中。CAS 的思想很简单，就是用一个预期值和要更新的变量值进行比较，两值相等才会进行更新。</p><p>CAS算法会有一个<strong>巨大的问题</strong>,就是<strong><em>ABA问题</em></strong>.如果一个变量 V 初次读取的时候是 A 值，并且在准备赋值的时候检查到它仍然是 A 值，那我们就能说明它的值没有被其他线程修改过了吗？很明显是不能的，因为在这段时间它的值可能被改为其他值，然后又改回 A，那 CAS 操作就会误认为它从来没有被修改过。ABA 问题的解决思路是在变量前面追加上<strong>版本号或者时间戳(java采用的方案)</strong>。</p><p>CAS算法还有一个<strong>问题</strong>就是<strong>循环时间长开销大</strong>.CAS 经常会用到自旋操作来进行重试，也就是不成功就一直循环执行直到成功。如果长时间不成功，会给 CPU 带来非常大的执行开销。</p><h4 id="乐观锁的特点："><a href="#乐观锁的特点：" class="headerlink" title="乐观锁的特点："></a>乐观锁的特点：</h4><p>1.乐观锁适用于并发读操作较多的场景，因为读操作不涉及到数据的修改，不需要加锁。<br>2.乐观锁在更新数据时，只有在提交更新操作时才对数据进行版本检查，减少了加锁和解锁的开销。<br>3.乐观锁可能需要进行重试，以处理并发修改引起的冲突。</p><h3 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h3><p>悲观锁总认为会别的线程回来抢占修改,于是采用一种<strong>防御的姿态</strong>将数据锁住,所以每次在获取资源操作的时候都会上锁，这样其他线程想拿到这个资源就会阻塞直到锁被上一个持有者释放。也就是说，共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程。</p><h4 id="悲观锁的特点："><a href="#悲观锁的特点：" class="headerlink" title="悲观锁的特点："></a>悲观锁的特点：</h4><p>1.悲观锁适用于并发写操作较多的场景，因为写操作涉及到数据的修改，需要保证数据的一致性。<br>2.悲观锁在加锁期间，其他线程无法访问被锁定的资源，从而保证了数据的完整性。<br>3.悲观锁需要频繁地进行加锁和解锁操作，开销较大。</p>]]></content>
       
       
       <categories>
@@ -42,7 +42,7 @@
     
     
     <entry>
-      <title>2023-10-18-经典组合问题</title>
+      <title>经典组合问题</title>
       <link href="/2023/10/18/%E7%BB%8F%E5%85%B8%E7%BB%84%E5%90%88%E9%97%AE%E9%A2%98/"/>
       <url>/2023/10/18/%E7%BB%8F%E5%85%B8%E7%BB%84%E5%90%88%E9%97%AE%E9%A2%98/</url>
       
