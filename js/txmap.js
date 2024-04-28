@@ -1,3 +1,5 @@
+var ipLoacation;
+
 //get请求
 $.ajax({
     type: 'get',
@@ -9,6 +11,7 @@ $.ajax({
     dataType: 'jsonp',
     success: function (res) {
         ipLoacation = res;
+        showWelcome();
     }
 })
 function getDistance(e1, n1, e2, n2) {
@@ -220,6 +223,6 @@ function showWelcome() {
         // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
     }
 }
-window.onload = showWelcome;
+// window.onload = showWelcome;
 // 如果使用了pjax在加上下面这行代码
 // document.addEventListener('pjax:complete', showWelcome);
