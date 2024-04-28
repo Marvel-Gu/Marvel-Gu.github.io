@@ -1,5 +1,13 @@
 var ipLoacation;
 
+function showWelcomeIfReady() {
+    if (ipLoacation && ipLoacation.result && ipLoacation.result.location) {
+        showWelcome();
+    } else {
+        console.error('ipLoacation is not ready yet.');
+    }
+}
+
 //get请求
 $.ajax({
     type: 'get',
@@ -11,7 +19,11 @@ $.ajax({
     dataType: 'jsonp',
     success: function (res) {
         ipLoacation = res;
+        showWelcomeIfReady();
         showWelcome();
+    },
+    error: function (err) {
+        console.error('Error fetching ip location:', err);
     }
 })
 function getDistance(e1, n1, e2, n2) {
