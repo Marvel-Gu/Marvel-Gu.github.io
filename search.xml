@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 杂谈 </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -92,7 +92,7 @@
       
       <categories>
           
-          <category> 杂谈 </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -119,7 +119,7 @@
       
       <categories>
           
-          <category> 杂谈 </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -325,7 +325,7 @@
       
       <categories>
           
-          <category> 杂谈 </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -369,7 +369,7 @@
       
       <categories>
           
-          <category> 杂谈 </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -863,7 +863,7 @@
       
       <categories>
           
-          <category> 杂谈 </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -892,6 +892,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -951,7 +957,7 @@
       
       <categories>
           
-          <category> java </category>
+          <category> 设计原则 </category>
           
       </categories>
       
@@ -976,7 +982,7 @@
       
       <categories>
           
-          <category> java </category>
+          <category> 设计原则 </category>
           
       </categories>
       
@@ -1070,7 +1076,7 @@
       
       <categories>
           
-          <category> java </category>
+          <category> 设计原则 </category>
           
       </categories>
       
@@ -1264,10 +1270,16 @@
       
       <categories>
           
-          <category> java </category>
+          <category> 设计原则 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 分布式系统 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1283,7 +1295,7 @@
       
       <categories>
           
-          <category> java </category>
+          <category> 设计原则 </category>
           
       </categories>
       
@@ -1308,7 +1320,7 @@
       
       <categories>
           
-          <category> java </category>
+          <category> 设计原则 </category>
           
       </categories>
       
@@ -1390,7 +1402,7 @@
       
       <categories>
           
-          <category> 杂谈 </category>
+          <category> 博客 </category>
           
       </categories>
       
