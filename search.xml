@@ -481,6 +481,33 @@
     
     
     <entry>
+      <title>npm install 报错 npm notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher.</title>
+      <link href="/2024/01/11/2024-1-11-npm%E6%8A%A5%E9%94%99/"/>
+      <url>/2024/01/11/2024-1-11-npm%E6%8A%A5%E9%94%99/</url>
+      
+        <content type="html"><![CDATA[<h3 id="npm-install-报错-npm-notice-Beginning-October-4-2021-all-connections-to-the-npm-registry-including-for-package-installation-must-use-TLS-1-2-or-higher-You-are-currently-using-plaintext-http-to-connect-Please-visit-the-GitHub-blog-for-more-information-https-github-blog-2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1"><a href="#npm-install-报错-npm-notice-Beginning-October-4-2021-all-connections-to-the-npm-registry-including-for-package-installation-must-use-TLS-1-2-or-higher-You-are-currently-using-plaintext-http-to-connect-Please-visit-the-GitHub-blog-for-more-information-https-github-blog-2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1" class="headerlink" title="npm install 报错:npm notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/"></a>npm install 报错:npm notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: <a href="https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/">https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/</a></h3><p><img src="https://pb01.s3.bitiful.net/203.webp" alt="avatar"></p><p>首先进入所给的网址查看:<br><img src="https://pb01.s3.bitiful.net/204.webp" alt="avatar"></p><p>查看自己的Node.js和npm版本:<br><img src="https://pb01.s3.bitiful.net/205.webp" alt="avatar"></p><p>发现版本够高(Node.js最好在18及以上, npm在7及以上)</p><p>执行所给代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz</span><br></pre></td></tr></table></figure></p><p>重新执行npm install,发现依旧报错</p><p>查看设置的npm源:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure></p><p>发现源是<code>http://registry.npmjs.org</code>, 没用https协议, 进行换源</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmjs.org</span><br></pre></td></tr></table></figure><p>再次执行npm install, 成功</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> npm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>西电数据库openGauss平台练习</title>
       <link href="/2023/12/29/openguass/"/>
       <url>/2023/12/29/openguass/</url>
