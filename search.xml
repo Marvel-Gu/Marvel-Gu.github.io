@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>美赛经验分享</title>
+      <link href="/2024/05/13/2024-5-13-%E7%BE%8E%E8%B5%9B/"/>
+      <url>/2024/05/13/2024-5-13-%E7%BE%8E%E8%B5%9B/</url>
+      
+        <content type="html"><![CDATA[<h3 id="美赛经验分享"><a href="#美赛经验分享" class="headerlink" title="美赛经验分享"></a>美赛经验分享</h3><p>前一段时间美赛出成绩了, 侥幸得了个M, 虽然不是什么大奖, 但也有一些浅薄的经验可以分享(主建模和画图)</p><p><img src="https://pb01.s3.bitiful.net/207.webp" alt="avatar"></p><h4 id="组队"><a href="#组队" class="headerlink" title="组队"></a>组队</h4><p>其实组队是决定你数模成绩的<strong>最重要</strong>的一步,和认真负责的队友组队会让你的成功几率上升一大截. 首先我推荐找一个靠谱的熟人, 再让他找一个.这样就是比较好的方式, 或者找两个熟人也行, 不太推荐去各种墙上找人,一般找到的都不太靠谱. 组完队之后, 在比赛开始前, 我们学校一般会有训练(其实就是做往年题), 在这个时候你应该能大致判断队友靠不靠谱了, 如果他天天有事不参加模拟训练或者说不积极不干活, 建议和另一个队友商量把他踢出去, 或者说你觉得另外两个队友都不靠谱, 那就退出重新寻找队伍. 熟人组队的一大劣势就是想踢人很难, 我国是个人情社会(bushi), 所以一开始就要认真思考. </p><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>首先要确定好1~2个主攻的题型,然后队内三个人的分工要明确, 特别是对于低年级第一次参赛的选手, 分工不明确的话学完很难 .</p><p>从<strong>建模</strong>的角度来说,提升最快的就是看优秀论文,O/F的都可以看看,提取应对某一类问题通用的解决方案和他们论文中的闪光点.积累到自己的笔记上, 比赛时可以快速选取一些解决方案. 还有就是自建模型或者结合基础模型的时候, 要考虑到可实现性, 如果你的模型无法实现, 或者实现起来太复杂, 那就妥协一些东西(简化模型/数据), 有结果总比没有结果强.</p><p>从<strong>画图</strong>的角度上来说, 最重要的就是复刻别人论文中的图, 积累好常用图像(像our work, 常用算法的原理图, 对比图等)的几种模版供比赛的时候使用, 常用图现画是不太经济的一种做法,即使是从现有的图调整往往也需要很久. 还可以去文献中找图复刻, 很多科研论文中的图看上去真的很高级, 也许表达的含义差不多, 但漂亮的插图绝对是一大加分项.</p><p>从<strong>编程</strong>的角度来说, 要复现优秀论文中的算法(虽然大多数情况下是调包侠), 常用算法要有一套能跑的, 如果要用在上面修改即可, 这样会快很多. 遇到问题可以去问问GPT-4, 代码的第一个版本也可以让它写, 简单的python代码还是可以写出来的.</p><p>从<strong>论文</strong>的角度来说, Latex学会基本使用就行. 有了大语言模型之后, 翻译的工作也轻松了很多, 其实三个人一起干会很快, 论文手在最后要对于排版进行调整.</p><h4 id="其他Tips"><a href="#其他Tips" class="headerlink" title="其他Tips"></a>其他Tips</h4><ol><li><p>要注重<code>细节</code>的处理, 某一部分有亮点往往会让论文的评价上一个档次</p></li><li><p>要<code>充分利用每个人的时间</code>, 尽量不要让队伍中的人无事可做, 手里的事情做完了就要主动去承担别的职责.</p></li><li><p>要懂得<code>快速试错</code>, 如果某个算法跑不出来, 立马换另一个去尝试. 如果结果不理想, 先考虑参数是否可以优化, 如果不行, 考虑换一个算法, 不要死磕一个算法, 你即使慢慢去调参优化, 往往不如换一个算法带来的提升更加明显, 找一个效果最好的算法再进行优化.</p></li><li><p>要适当的去<code>美化</code>自己的结果(不是造假修改数据哦😇), 比如说如果最后的结果对于全数据集来说效果不是特别好, 那可以挑部分效果好的数据集来验证(这也要看任务,不能无脑用), 那这样就可以说模型特别适用于某某场景, 后面的缺点或者模型改进也有东西可写</p></li><li><p><code>摘要</code>是最重要的部分之一, 它决定你是否可以通过第一轮的筛选, 通不过的话就是S, 没得商量. 在摘要中要量化自己的结果, 不要只用主观的描述, 这会让人怀疑真实性</p></li><li><p>如果论文没有什么突出的创新点, <code>提高工作量</code>也是一种选择, 比如说加入多种模型的对比, 扩充数据集等. </p></li></ol><h4 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h4><p>为了保护隐私,把队号删了🥰. PDF经过压缩, 图片不是很清晰, 原件看上去是清晰的</p><div class="row">    <embed src="/MCM_compressed.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MCM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>博客魔改教程之电脑手机黑夜白天四背景</title>
       <link href="/2024/05/02/2024-5-2-%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B-2/"/>
       <url>/2024/05/02/2024-5-2-%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B-2/</url>
@@ -99,9 +124,9 @@
       
         <tags>
             
-            <tag> lab </tag>
-            
             <tag> 安全 </tag>
+            
+            <tag> lab </tag>
             
         </tags>
       
@@ -257,9 +282,9 @@
       
         <tags>
             
-            <tag> lab </tag>
-            
             <tag> 安全 </tag>
+            
+            <tag> lab </tag>
             
         </tags>
       
@@ -832,9 +857,9 @@
       
         <tags>
             
-            <tag> lab </tag>
-            
             <tag> 安全 </tag>
+            
+            <tag> lab </tag>
             
         </tags>
       
@@ -852,16 +877,16 @@
       
       <categories>
           
-          <category> garbage </category>
+          <category> xdu </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> lab </tag>
-            
             <tag> 安全 </tag>
+            
+            <tag> lab </tag>
             
         </tags>
       
@@ -889,25 +914,6 @@
             <tag> lab </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>流式异步响应实现</title>
-      <link href="/2023/12/05/2023-12-5-OpenAI-01/"/>
-      <url>/2023/12/05/2023-12-5-OpenAI-01/</url>
-      
-        <content type="html"><![CDATA[<h3 id="流式异步响应实现"><a href="#流式异步响应实现" class="headerlink" title="流式异步响应实现"></a>流式异步响应实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@RestController()</span>  <span class="comment">//注解为REST控制器,以便处理HTTP请求和响应</span></span><br><span class="line"><span class="meta">@CrossOrigin(&quot;*&quot;)</span>  <span class="comment">//允许所有跨域请求</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api/v1/&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ChatGPTAIServiceControllerOld</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> OpenAiSession openAiSession;  </span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> ThreadPoolExecutor threadPoolExecutor;  <span class="comment">//注入线程池,提高处理效率</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;chat/completions&quot;, method = RequestMethod.POST)</span></span><br><span class="line">    <span class="keyword">public</span> ResponseBodyEmitter <span class="title function_">completionsStream</span><span class="params">(<span class="meta">@RequestBody</span> ChatGPTRequestDTO request, <span class="meta">@RequestHeader(&quot;Authorization&quot;)</span> String token, HttpServletResponse response)</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;流式问答请求开始，使用模型：&#123;&#125; 请求信息：&#123;&#125;&quot;</span>, request.getModel(), JSON.toJSONString(request.getMessages()));</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 1. 设置响应头参数；流式输出、UTF-8、禁用缓存</span></span><br><span class="line">            response.setContentType(<span class="string">&quot;text/event-stream&quot;</span>);</span><br><span class="line">            response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">            response.setHeader(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;no-cache&quot;</span>);</span><br><span class="line">            <span class="comment">//简单校验token</span></span><br><span class="line">            <span class="keyword">if</span> (!token.equals(<span class="string">&quot;xxxx&quot;</span>)) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;token err!&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 2. 异步处理 HTTP 响应处理类</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 创建ResponseBodyEmitter对象，设置超时时间</span></span><br><span class="line">            <span class="type">ResponseBodyEmitter</span> <span class="variable">emitter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ResponseBodyEmitter</span>(<span class="number">3</span> * <span class="number">60</span> * <span class="number">1000L</span>);  </span><br><span class="line">            <span class="comment">// 设置完成和错误事件的处理方法</span></span><br><span class="line">            emitter.onCompletion(() -&gt; &#123;</span><br><span class="line">                log.info(<span class="string">&quot;流式问答请求完成，使用模型：&#123;&#125;&quot;</span>, request.getModel());</span><br><span class="line">            &#125;);</span><br><span class="line">            emitter.onError(throwable -&gt; log.error(<span class="string">&quot;流式问答请求疫情，使用模型：&#123;&#125;&quot;</span>, request.getModel(), throwable));</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3.1 构建请求参数</span></span><br><span class="line">            List&lt;Message&gt; messages = request.getMessages().stream()  <span class="comment">//请求对象中的消息列表，并将其转换为Stream对象。</span></span><br><span class="line">                    .map(entity -&gt; Message.builder()  <span class="comment">//使用map方法将每个消息对象转换为一个Message.builder对象</span></span><br><span class="line">                            .role(Constants.Role.valueOf(entity.getRole().toUpperCase()))  </span><br><span class="line">                            .content(entity.getContent())</span><br><span class="line">                            .name(entity.getName())</span><br><span class="line">                            .build())  <span class="comment">//构建器创建新消息对象</span></span><br><span class="line">                    .collect(Collectors.toList());<span class="comment">// 将构建器创建的消息对象列表收集到一个新的列表中，并将新列表赋值给messages变量</span></span><br><span class="line">            <span class="comment">// 构建请求对象</span></span><br><span class="line">            <span class="type">ChatCompletionRequest</span> <span class="variable">chatCompletion</span> <span class="operator">=</span> ChatCompletionRequest</span><br><span class="line">                    .builder()</span><br><span class="line">                    .stream(<span class="literal">true</span>)</span><br><span class="line">                    .messages(messages)</span><br><span class="line">                    .model(ChatCompletionRequest.Model.GPT_3_5_TURBO.getCode())</span><br><span class="line">                    .build();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3.2 请求应答</span></span><br><span class="line">            openAiSession.chatCompletions(chatCompletion, <span class="keyword">new</span> <span class="title class_">EventSourceListener</span>() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onEvent</span><span class="params">(<span class="meta">@NotNull</span> EventSource eventSource, <span class="meta">@Nullable</span> String id, <span class="meta">@Nullable</span> String type, <span class="meta">@NotNull</span> String data)</span> &#123;</span><br><span class="line">                    <span class="type">ChatCompletionResponse</span> <span class="variable">chatCompletionResponse</span> <span class="operator">=</span> JSON.parseObject(data, ChatCompletionResponse.class);</span><br><span class="line">                    List&lt;ChatChoice&gt; choices = chatCompletionResponse.getChoices();</span><br><span class="line">                    <span class="keyword">for</span> (ChatChoice chatChoice : choices) &#123;</span><br><span class="line">                        <span class="type">Message</span> <span class="variable">delta</span> <span class="operator">=</span> chatChoice.getDelta();</span><br><span class="line">                        <span class="keyword">if</span> (Constants.Role.ASSISTANT.getCode().equals(delta.getRole())) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 应答完成</span></span><br><span class="line">                        <span class="type">String</span> <span class="variable">finishReason</span> <span class="operator">=</span> chatChoice.getFinishReason();</span><br><span class="line">                        <span class="keyword">if</span> (StringUtils.isNoneBlank(finishReason) &amp;&amp; <span class="string">&quot;stop&quot;</span>.equals(finishReason)) &#123;</span><br><span class="line">                            emitter.complete();</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 发送信息</span></span><br><span class="line">                        <span class="keyword">try</span> &#123;</span><br><span class="line">                            emitter.send(delta.getContent());  <span class="comment">//将内容添加到响应流中</span></span><br><span class="line">                        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> emitter;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.error(<span class="string">&quot;流式应答，请求模型：&#123;&#125; 发生异常&quot;</span>, request.getModel(), e);</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ChatGPTException</span>(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> garbage </category>
-          
-      </categories>
-      
       
     </entry>
     
