@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>应用密码学与网络安全实验 | Levitate Gu</title><meta name="author" content="levitategu"><meta name="copyright" content="levitategu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="应用密码学与网络安全实验这是计科网络方向应用密码学与网络安全的随课实验, 占课程分数的20%. 第一次主要是介绍内容, 两周后的第二次实验主要是验收, 实验内容自己线下完成即可. 实验内容如下:  密码学及应用：熟悉云安全实验平台及环境，完成：实验1（古典密码算法）――&gt;练习一Caesar密码，实验1（古典密码算法）――&gt;练习二单表置换密码，实验1（古典密码算法）――&gt;练习三仿射">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应用密码学与网络安全实验">
+<meta property="og:url" content="https://www.levitategu.cn/2024/06/26/2024-6-26-%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Levitate Gu">
+<meta property="og:description" content="应用密码学与网络安全实验这是计科网络方向应用密码学与网络安全的随课实验, 占课程分数的20%. 第一次主要是介绍内容, 两周后的第二次实验主要是验收, 实验内容自己线下完成即可. 实验内容如下:  密码学及应用：熟悉云安全实验平台及环境，完成：实验1（古典密码算法）――&gt;练习一Caesar密码，实验1（古典密码算法）――&gt;练习二单表置换密码，实验1（古典密码算法）――&gt;练习三仿射">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pb01.s3.bitiful.net/24.webp">
+<meta property="article:published_time" content="2024-06-26T11:58:20.000Z">
+<meta property="article:modified_time" content="2024-06-26T13:28:08.084Z">
+<meta property="article:author" content="levitategu">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="lab">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pb01.s3.bitiful.net/24.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.levitategu.cn/2024/06/26/2024-6-26-%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-295586852-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-295586852-1');
+</script><link rel="stylesheet" href="font-family:var(--global-font), Consolas_1, -apple-system, 'Quicksand', 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '应用密码学与网络安全实验',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-26 21:28:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-shouye"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw icon-guidang"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang"></use></svg><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw icon-biaoqian"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-biaoqian"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw icon-fenlei"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liebiao"></use></svg><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-dianying">                   </use></svg><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw icon-liuyanban"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyanban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw icon-lianjie"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lianjie"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw icon-guanyu"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guanyu"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pb01.s3.bitiful.net/24.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="Levitate Gu"><span class="site-name">Levitate Gu</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-shouye"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw icon-guidang"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang"></use></svg><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw icon-biaoqian"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-biaoqian"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw icon-fenlei"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liebiao"></use></svg><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-dianying">                   </use></svg><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw icon-liuyanban"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyanban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw icon-lianjie"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lianjie"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw icon-guanyu"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guanyu"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">应用密码学与网络安全实验</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-26T11:58:20.000Z" title="发表于 2024-06-26 19:58:20">2024-06-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-26T13:28:08.084Z" title="更新于 2024-06-26 21:28:08">2024-06-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/xdu/">xdu</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="应用密码学与网络安全实验"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="应用密码学与网络安全实验"><a href="#应用密码学与网络安全实验" class="headerlink" title="应用密码学与网络安全实验"></a>应用密码学与网络安全实验</h2><p>这是计科网络方向应用密码学与网络安全的随课实验, 占课程分数的20%. 第一次主要是介绍内容, 两周后的第二次实验主要是验收, 实验内容自己线下完成即可.</p>
+<p>实验内容如下:</p>
+<ol>
+<li>密码学及应用：熟悉云安全实验平台及环境，完成：<br>实验1（古典密码算法）――&gt;练习一Caesar密码，<br>实验1（古典密码算法）――&gt;练习二单表置换密码，<br>实验1（古典密码算法）――&gt;练习三仿射密码</li>
+<li>密码学及应用：<br>实验2（对称密码算法）――&gt;练习一DES，<br>实验2（对称密码算法）――&gt;练习二AES</li>
+<li>密码学及应用：<br>实验3（非对称密码算法）――&gt;练习一RSA，<br>实验4（ Hash算法）   ――&gt;练习一MD5</li>
+<li>密码学及应用：<br>实验5（密码应用）――&gt;练习一文件安全传输</li>
+</ol>
+<p>这个实验的目的是为了考察对于各个加密算法的流程的理解和掌握, 并不是要让你真的手搓这些算法(当然能手搓也是一种能力). 最后验收只要将结果展示出来并且能解释清楚(需要完整讲述算法流程, 主要验收DES, AES, RSA, MD5, 以及文件安全传输)</p>
+<h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><p>DES 算法是在 Feistel network 的基础上执行的.以下是 DES 算法的流程图:</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/211.webp" alt="avatar"></p>
+<p>我们可以看到DES算法可以分为左右两个部分, 左半部分为迭代加密, 右半部分为子密钥生成.</p>
+<p><strong>子密钥生成</strong></p>
+<p>我们要从初始的64位的秘钥中生成16个48位的子密钥(Sub-key), 大致步骤如下:</p>
+<ol>
+<li>初始秘钥经过PC-1置换, 得到56位的初始秘钥, 剩余的8位做校验位</li>
+<li>将56位的初始秘钥分成左右两部分, 分别记为C~i~, D~i~</li>
+<li>将左右两部分分别循环左移1~2位, 即可得到C~i+1~, D~i+1~, 当i=1,2,9,16时左移1位，其它左移2位。</li>
+<li>将C~i+1~, D~i+1~分别经过PC-2置换, 合并到一起就得到了48位的子密钥</li>
+<li>如此总共进行16轮, 就得到了16个48位的子密钥</li>
+</ol>
+<p><strong>迭代加密</strong></p>
+<p>迭代加密部分, 主要分为两个步骤:</p>
+<ol>
+<li>初始明文经过IP置换, 将其分为左右两半部分分别为L和R</li>
+<li>每一轮迭代，都是接收一组 L, R，返回 L’, R’ ，作为下一轮迭代的 L, R . 迭代过程如下：</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/212.webp" alt="avatar"></p>
+<p>其中F函数（称为轮函数）是整个算法的核心，功能是：以一个子密钥，加密 32-bit 的信息。</p>
+<ol>
+<li>利用之前得到的 16 个子密钥，执行步骤 2 一共 16 次</li>
+<li>将最终的 R 与 L 拼接，再做一次FP置换(IP置换的逆变换)，即得到密文</li>
+</ol>
+<p><strong>轮函数</strong></p>
+<ol>
+<li>对32位的输入进行E扩展, 变为为48位的扩展输出</li>
+<li>扩展输出与子密钥进行异或运算</li>
+<li>扩展输出经过S盒置换, 得到32位的输出</li>
+<li>P置换, 得到28位的输出</li>
+</ol>
+<h3 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h3><p>AES算法的流程图:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/213.webp" alt="avatar"></p>
+<p>每一轮迭代都是字节替换, 行移位, 列混淆, 轮秘钥加这四个步骤. 以128位秘钥为例, N=10, 需要N+1(11)个轮秘钥, 中间循环迭代N-1(9)轮, 也可以说迭代N轮, 最后一轮不进行列混淆</p>
+<p>关于字节替换, 行移位, 列混淆的具体细节可以去看PPT, 在验收时不要求能详细说出来.</p>
+<p><strong>秘钥扩展</strong></p>
+<p>AES加密可以采用不同长度的秘钥, 一般为128位, 192位, 256位, 分别对应10轮, 12轮, 14轮. 秘钥扩展的步骤如下(以128位秘钥为例):</p>
+<ol>
+<li>扩展密钥的前四个字直接由输入密钥中复制，即w[0]~w[3], w[i]的值等于w[i-1]异或w[i-4] (i&gt;=4,i不是4的倍数)</li>
+<li>对于下标为4的倍数的密钥字，其产生方法更为复杂，表示为函数g(w[i-1])<br>包括的运算步骤有：</li>
+</ol>
+<ul>
+<li>字循环(RotWord)：使一个字中的4个字节循环左移一个字节</li>
+<li>字节代换(SubWord)：利用S盒对输入字中的每个字节进行代替</li>
+<li>字循环与字节代换的结果再与轮常量Rcon[j]相异或</li>
+</ul>
+<ol>
+<li>w[i]的值等于w[i-4]异或g(w[i-1]) (i&gt;=4, i是4的倍数)</li>
+</ol>
+<p>示意图:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/214.webp" alt="avatar"></p>
+<h3 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h3><p>MD5是一个基于哈希函数的加密算法, 其输入为任意长度的二进制数据, 输出为128位的二进制数据.<br>其流程如下:</p>
+<ol>
+<li>对输入明文进行填充, 使其能被512整除(后面每一轮的输入都是512位),填充的具体步骤如下: 首先将数据长度表示为二进制形式，并附加到数据的末尾; 在数据末尾添加一个’1’比特，然后填充0直到数据长度满足对512取模的结果为448(即数据长度模512等于448); 将数据长度（64位）附加到填充后的数据末尾，以二进制表示</li>
+<li>将512位的明文分组划分为16个子明文分组，每个子明文分组为32位</li>
+<li>初始化4个32位的链接变量，记为A、B、C、D, 初始是固定值</li>
+<li>对每个子明文分组和四个链接变量(a,b,c,d, 如果是第一次运算的话, 就是ABCD的值)都进行FF,GG,HH,II四轮运算(共64次运算)</li>
+<li>将运算之后的链接变量a,b,c,d与初始链接变量A,B,C,D进行求和运算得到新的链接变量</li>
+<li>新的链接变量作为下一个明文分组的输入重复进行以上操作</li>
+<li>最后，4个链接变量里面的数据就是MD5摘要</li>
+</ol>
+<p>RSA比较简单我就不写了</p>
+<h3 id="文件安全传输"><a href="#文件安全传输" class="headerlink" title="文件安全传输"></a>文件安全传输</h3><p>要设计一套A和B之间可以安全通信的方案, 不需要考虑传输部分, 因为这是基于前面的代码的, 集成起来比较麻烦. 验收时讲解流程和展示结果即可, 不需要现场运行</p>
+<p>方案设计:</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/215.webp" alt="avatar"></p>
+<p><strong>参数选取</strong></p>
+<p>RSA A：选择 p=61，q=53，e=17 得到公钥（e，n）=（17，3233） 私钥（d，<br>n）=（2573，3233）<br>RSA B:选择 p=47，q=59，e=63 得到公钥（e，n）=（63，2773） 私钥（d，<br>n）=（847，2773）<br>明文: levit<br>AES 秘钥: 12345678KJNMLSDG</p>
+<p><strong>加密过程(A)</strong>:<br>AES 密文: 640246746 37579803911 321220508 1223758774 116<br>用 B 的公钥对 AES 秘钥进行 RSA 加密 RSA_AES_miyao : ۯ Ϳ ʭ ؆ ĳ β ճ ਝ ѽ<br>॥ ¤ ઁ উ ३ ષ<br>对明文计算 MD5 摘要,MD5_miwen: ea152a3ff6469c391ee8c79a01191d80<br>A 的私钥对 MD5_miwen 加密, RSA_MD5_miwen: ઁ ઁ ઁ ۰ χ χ స ص<br>స ਘ ō ۰ ਘ ұ ō ਘ ઁ ਐ ਘ Ɵ ұ ਐ ষ<br>最后把加密生成的文件 AES_miwen.txt、RSA_AES_miyao.txt、<br>RSA_MD5_miwen.txt 打包发给终端 B</p>
+<p><strong>解密过程(B)</strong>:<br>终端 B 的私钥对 RSA_AES_miyao.txt 进行 RSA 解密, 得到:AES_Key<br>对 AES_miwen 解密，得到明文 AES_mingwen.txt<br>用 MD5 算法对所得明文 AES_mingwen.txt 进行加密生成解密后的明文摘要。得<br>到： AES_mingwen_MD5.txt<br>RSA 算法用终端 A 的公钥对 RSA_MD5_miwen.txt 进行解密，得到:<br>RSA_MD5_mingwen.txt<br>比较 RSA_MD5_mingwen.txt 和 AES_mingwen_MD5.txt 有什么不同</p>
+<p>加密结果与编码有关, 同样参数也可能显示不一样的结果</p>
+<p>结果展示:</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/216.webp" alt="avatar"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/217.webp" alt="avatar"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/218.webp" alt="avatar"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/219.webp" alt="avatar"></p>
+<p>代码和实验报告开源在了我的<a target="_blank" rel="noopener" href="https://github.com/Marvel-Gu/XDU_CS_Applied_cryptography.git" style="color: #177cb0; text-decoration: underline;text-decoration-style: dotted;">github</a>上, 如果对你有帮助的话, 求个star和follow😘</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>应用密码学与网络安全实验</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://www.levitategu.cn/2024/06/26/2024-6-26-%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/">https://www.levitategu.cn/2024/06/26/2024-6-26-%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>levitategu</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-06-26</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-06-26</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AE%89%E5%85%A8/">安全</a><a class="post-meta__tags" href="/tags/lab/">lab</a></div><div class="post_share"><div class="social-share" data-image="https://pb01.s3.bitiful.net/24.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/05/27/2024-5-27-GO%E5%85%A5%E9%97%A8/" title="初学者眼中的Go语言"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/28.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">初学者眼中的Go语言</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/13/DOS%E6%94%BB%E5%87%BB/" title="对自己的博客网站进行DOS攻击"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/9.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-13</div><div class="title">对自己的博客网站进行DOS攻击</div></div></a></div><div><a href="/2023/12/14/Openssl/" title="OpenSSL实现单向认证"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/16.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-14</div><div class="title">OpenSSL实现单向认证</div></div></a></div><div><a href="/2024/04/22/2024-4-22-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%812/" title="数据安全检索"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/15.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-22</div><div class="title">数据安全检索</div></div></a></div><div><a href="/2024/04/09/2024-4-9-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%811/" title="现代密码学基础技能"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/42.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-09</div><div class="title">现代密码学基础技能</div></div></a></div><div><a href="/2024/05/07/2024-5-7-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%813/" title="大数据隐私保护"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-07</div><div class="title">大数据隐私保护</div></div></a></div><div><a href="/2024/02/26/%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F/" title="Hutool：一行代码搞定数据脱敏 | 京东云技术团队"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pb01.s3.bitiful.net/3.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-26</div><div class="title">Hutool：一行代码搞定数据脱敏 | 京东云技术团队</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">levitategu</div><div class="author-info__description">Stay hungry, stay foolish.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Marvel-Gu"><i class="icon-github"></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Marvel-Gu" target="_blank" title="Github"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-github"></use></svg></a><a class="social-icon faa-parent animated-hover" href="mailto:levitategu@gmail.com" target="_blank" title="Email"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xiangsufeng_youxiang"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><a class="faa-parent animated-hover"><svg class="faa-tada icon" style="height:25px;width:20px;fill:currentColor;position:relative;top:2px" aria-hidden="true"><use xlink:href="#icon-gonggao"></use></svg></a><span>公告栏</span></div><div class="announcement_content"><center><b>--- 主域名 ---<br><a href="https://www.levitategu.cn" title="此线路部署于阿里云" class="anno_content"><font color="#5ea6e5">www.levitategu.cn</font></a><br>--- 备用域名 ---<br><a target="_blank" rel="noopener" href="https://levitategu.cn" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">levitategu.cn</font></a><br>🍧🍧🍧🍧🍧🍧</b></center></div><div id="welcome-info"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C"><span class="toc-text">应用密码学与网络安全实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DES"><span class="toc-text">DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AES"><span class="toc-text">AES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MD5"><span class="toc-text">MD5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%AE%89%E5%85%A8%E4%BC%A0%E8%BE%93"><span class="toc-text">文件安全传输</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By levitategu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="/img/ICP.png">Butterfly</a></div><div class="framework-info"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">苏ICP备2023035675号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="/js/txmap.js"></script><script async src="//at.alicdn.com/t/c/font_4273027_kf8i2dj509.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="50" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></html>
