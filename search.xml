@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> 安全 </tag>
-            
             <tag> lab </tag>
+            
+            <tag> 安全 </tag>
             
         </tags>
       
@@ -97,9 +97,9 @@
       
         <tags>
             
-            <tag> 安全 </tag>
-            
             <tag> lab </tag>
+            
+            <tag> 安全 </tag>
             
         </tags>
       
@@ -203,9 +203,9 @@
       
         <tags>
             
-            <tag> 安全 </tag>
-            
             <tag> lab </tag>
+            
+            <tag> 安全 </tag>
             
         </tags>
       
@@ -361,9 +361,9 @@
       
         <tags>
             
-            <tag> 安全 </tag>
-            
             <tag> lab </tag>
+            
+            <tag> 安全 </tag>
             
         </tags>
       
@@ -921,9 +921,9 @@
       
         <tags>
             
-            <tag> 安全 </tag>
-            
             <tag> lab </tag>
+            
+            <tag> 安全 </tag>
             
         </tags>
       
@@ -948,9 +948,9 @@
       
         <tags>
             
-            <tag> 安全 </tag>
-            
             <tag> lab </tag>
+            
+            <tag> 安全 </tag>
             
         </tags>
       
@@ -1420,31 +1420,6 @@
         <tags>
             
             <tag> 分布式系统 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>工厂模式</title>
-      <link href="/2023/11/06/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-      <url>/2023/11/06/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
-      
-        <content type="html"><![CDATA[<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p><img src="https://pb01.s3.bitiful.net/1.png" alt="avatar"></p><p>工厂模式主要可分为三种:简单工厂,工厂方法,抽象工厂</p><h3 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h3><p><strong>提供实现方法的工厂</strong></p><p>简单工厂主要有使用工厂的对象,工厂,具体实现类以及从实现类中抽象出的接口,如下图:</p><p><img src="https://pb01.s3.bitiful.net/2.png" alt="avatar"></p><p>简单工厂的<strong>问题</strong>在于当具体实现类的增加,工厂的代码也得不断修改(增加),违反了开闭原则(OOP)</p><h3 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h3><p><strong>提供工厂的方法</strong></p><p>具体来说有:工厂接口,产品接口,产品实现类,工厂实现类,使用类</p><ul><li>每类产品都有自己的工厂,符合单一职责原则;</li><li>这类产品变化只改变这类产品的工厂,更符合开闭原则</li></ul><p>但工厂方法也有自己的问题,就是每当新增一类产品时,就得多增加一个工厂,当产品种类非常多时,就会有非常多的工厂,这会导致代码变得复杂和难以维护.</p><h3 id="抽象工厂"><a href="#抽象工厂" class="headerlink" title="抽象工厂"></a>抽象工厂</h3><p><strong>提供组合工厂的方法</strong></p><p>具体来说有:抽象工厂接口,工厂,产品接口,产品实现</p><p>举个例子,我要代工生产的产品有手机,电脑,路由器…等产品,这些产品的制造方法在抽象工厂接口被定义,根据具体的品牌分别创建不同品牌的工厂,像小米工厂,华为工厂,vivo工厂等,产品的制造方法在具体品牌的工厂实现,这些产品实现也实现了具体的产品接口,华为手机实现手机接口,制造华为手机的方法返回华为手机,实现制造手机接口,每种产品都是如此.</p><p>优点：</p><ul><li>可以确保同一工厂生成的产品相互匹配.</li><li>可以避免客户端和具体产品代码的耦合.</li><li>单一职责原则:可以将产品生成代码抽取到同一位置， 使得代码易于维护。</li><li>开闭原则:向应用程序中引入新产品变体时， 无需修改客户端代码</li></ul><p>缺点:</p><ul><li>全新品类产品难以扩展:本来只准备生产手机,电脑,路由器,现在又要添加手表这类产品,从抽象工厂开始的所有往底层所有代码都要修改.</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 设计原则 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 设计模式 </tag>
             
         </tags>
       
