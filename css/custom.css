@@ -234,15 +234,37 @@ svg.social_icon {
 
 
 /* 白天模式文章页面强制高不透明度背景 - 解决文字看不清问题 */
-div#post,
-div#page,
-div#archive {
+/* 只在白天模式下应用，不影响黑夜模式 */
+div#post:not([data-theme="dark"]),
+div#page:not([data-theme="dark"]),
+div#archive:not([data-theme="dark"]) {
   background: rgba(255, 255, 255, 0.98) !important;
 }
 
-/* 确保文章内容区域文字清晰可读 */
-#article-container {
+/* 白天模式确保文章内容区域文字清晰可读 */
+body:not([data-theme="dark"]) #article-container {
   color: #1a1a1a;
+}
+
+/* 黑夜模式保持原有的深色背景和浅色文字 */
+[data-theme="dark"] div#post,
+[data-theme="dark"] div#page,
+[data-theme="dark"] div#archive {
+  background: rgba(25, 25, 25, 0.95) !important;
+}
+
+[data-theme="dark"] #article-container {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 黑夜模式标题颜色 */
+[data-theme="dark"] #article-container h1,
+[data-theme="dark"] #article-container h2,
+[data-theme="dark"] #article-container h3,
+[data-theme="dark"] #article-container h4,
+[data-theme="dark"] #article-container h5,
+[data-theme="dark"] #article-container h6 {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 
