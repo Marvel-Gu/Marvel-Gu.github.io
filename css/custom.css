@@ -233,11 +233,11 @@ svg.social_icon {
 }
 
 
-/* 白天模式文章页面强制高不透明度背景 - 解决文字看不清问题 */
+/* 白天模式文章页面 - 适度透明背景 */
 div#post,
 div#page,
 div#archive {
-  background: rgba(255, 255, 255, 0.98) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
 }
 
 /* 白天模式确保文章内容区域文字清晰可读 */
@@ -245,11 +245,11 @@ div#archive {
   color: #1a1a1a;
 }
 
-/* 黑夜模式保持原有的深色背景和浅色文字 */
+/* 黑夜模式 - 适度透明背景 */
 [data-theme="dark"] div#post,
 [data-theme="dark"] div#page,
 [data-theme="dark"] div#archive {
-  background: rgba(25, 25, 25, 0.95) !important;
+  background: rgba(25, 25, 25, 0.85) !important;
 }
 
 [data-theme="dark"] #article-container {
@@ -266,20 +266,20 @@ div#archive {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* 白天模式首页文章卡片 - 提高不透明度 */
+/* 白天模式首页文章卡片 - 适度透明 */
 #recent-posts > .recent-post-item {
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: rgba(255, 255, 255, 0.90) !important;
 }
 
-/* 白天模式首页侧栏卡片 - 提高不透明度 */
+/* 白天模式首页侧栏卡片 - 适度透明 */
 #aside-content .card-widget {
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: rgba(255, 255, 255, 0.90) !important;
 }
 
-/* 黑夜模式首页卡片背景 */
+/* 黑夜模式首页卡片背景 - 适度透明 */
 [data-theme="dark"] #recent-posts > .recent-post-item,
 [data-theme="dark"] #aside-content .card-widget {
-  background: rgba(25, 25, 25, 0.95) !important;
+  background: rgba(25, 25, 25, 0.85) !important;
 }
 
 /* 黑夜模式首页文章卡片标题颜色 */
@@ -308,49 +308,5 @@ div#archive {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* 音乐页面布局修复 - 确保侧边栏显示在右侧 */
-@media screen and (min-width: 900px) {
-  /* 强制页面保持双栏布局 */
-  .layout:not(.hide-aside) {
-    display: flex !important;
-    flex-direction: row !important;
-  }
-  
-  /* 确保主内容区域宽度不会超出 */
-  .layout:not(.hide-aside) > div:first-child {
-    width: 74% !important;
-    max-width: 74% !important;
-    flex-shrink: 0;
-    box-sizing: border-box;
-  }
-  
-  /* 确保侧边栏宽度 */
-  .layout:not(.hide-aside) #aside-content {
-    width: 26% !important;
-    max-width: 26% !important;
-    flex-shrink: 0;
-    box-sizing: border-box;
-  }
-  
-  /* 确保所有内容元素不超出容器 */
-  #page,
-  #page #article-container,
-  #page .xiaoyuzhou-podcast,
-  #page .podcast-section,
-  #page .single-music-section {
-    max-width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  
-  /* 确保音乐播放器和iframe不会超出容器宽度 */
-  #page .aplayer,
-  #page .meting-player,
-  #page .podcast-embed,
-  #page iframe {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-}
 
 
